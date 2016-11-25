@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Sunshine</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_view_location">View location</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="detail_text">Loading detail...</string>
+    <item name="detail_text" type="id">Loading!</item>
+    <string name="hello_world">Hello yall</string>
+    <string name="pref_location_default" translatable="false">59411</string>
+    <string name="location_selectallonfocus" translatable="false">false</string>
+    <string name="location_singleline" translatable="false">true</string>
+    <string name="location_title">Location</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="pref_units_key" translatable="false">units</string>
+    <string name="pref_units_default" translatable="false">"Fahrenheit"</string>
+    <string name="action_share">Share</string>
+</resources>
