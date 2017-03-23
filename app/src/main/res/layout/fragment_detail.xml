@@ -14,14 +14,17 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_day_name"
+        android:layout_alignRight="@+id/detail_day_name"
+        android:layout_alignEnd="@+id/detail_day_name"
         android:id="@+id/detail_text" />
     <TextView
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/detail_day_name"
-        android:layout_alignRight="@+id/detail_day_name"
-        android:layout_alignEnd="@+id/detail_day_name"
+        android:layout_below="@+id/detail_text"
+        android:layout_alignRight="@+id/detail_text"
+        android:layout_alignEnd="@+id/detail_text"
         android:id="@+id/detail_date" />
     <TextView
         android:text="TextView"
