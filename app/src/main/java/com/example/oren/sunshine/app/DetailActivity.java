@@ -92,6 +92,15 @@ public class DetailActivity extends AppCompatActivity {
 
         private static final String LOG_TAG = DetailFragment.class.getSimpleName();
         private static final String FORECAST_SHARE_HASHTAG = "#SunshineApp";
+        private final String EXTRA_DAY_NAME = "com.example.oren.sunshine.app.DayName";
+        private final String EXTRA_TEXT = "com.example.oren.sunshine.app.Text";
+        private final String EXTRA_DATE = "com.example.oren.sunshine.app.Date";
+        private final String EXTRA_HIGH = "com.example.oren.sunshine.app.High";
+        private final String EXTRA_LOW = "com.example.oren.sunshine.app.Low";
+        private final String EXTRA_HUMIDITY = "com.example.oren.sunshine.app.Humidity";
+        private final String EXTRA_WIND = "com.example.oren.sunshine.app.Wind";
+        private final String EXTRA_PRESSURE = "com.example.oren.sunshine.app.Pressure";
+        private final String EXTRA_LABEL = "com.example.oren.sunshine.app.Label";
         private String mDayNameStr;
         private String mTextStr;
         private String mDateStr;
@@ -112,18 +121,22 @@ public class DetailActivity extends AppCompatActivity {
 
             View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
             Intent intent = getActivity().getIntent();
-            if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
-                mDayNameStr = intent.getStringExtra(Intent.EXTRA_DAY_NAME);
-                mTextStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-                mDateStr = intent.getStringExtra(Intent.EXTRA_DATE);
-                mHighStr = intent.getStringExtra(Intent.EXTRA_HIGH);
-                mLowStr = intent.getStringExtra(Intent.EXTRA_LOW);
-                mHumidityStr = intent.getStringExtra(Intent.EXTRA_HUMIDITY);
-                mWindStr = intent.getStringExtra(Intent.EXTRA_WIND);
-                mPressureStr = intent.getStringExtra(Intent.EXTRA_PRESSURE);
-                mLabelStr = intent.getStringExtra(Intent.EXTRA_LABEL);
+            if (intent != null
+                    && intent.hasExtra(EXTRA_TEXT)
+                    ) {
+                mDayNameStr = intent.getStringExtra(EXTRA_DAY_NAME);
+                mTextStr = intent.getStringExtra(EXTRA_TEXT);
+                mDateStr = intent.getStringExtra(EXTRA_DATE);
+                mHighStr = intent.getStringExtra(EXTRA_HIGH);
+                mLowStr = intent.getStringExtra(EXTRA_LOW);
+                mHumidityStr = intent.getStringExtra(EXTRA_HUMIDITY);
+                mWindStr = intent.getStringExtra(EXTRA_WIND);
+                mPressureStr = intent.getStringExtra(EXTRA_PRESSURE);
+                mLabelStr = intent.getStringExtra(EXTRA_LABEL);
                 TextView tDetailText = (TextView) rootView.findViewById(R.id.detail_text);
                 tDetailText.setText(concat(mTextStr, " - YO"));
+                TextView tDayName = (TextView) rootView.findViewById(R.id.detail_day_name);
+                tDayName.setText(mDayNameStr);
             }
 
             return rootView;

@@ -53,6 +53,15 @@ import java.util.ArrayList;
 public class ForecastFragment extends Fragment {
 
     private final String LOG_TAG = ForecastFragment.class.getSimpleName();
+    private final String EXTRA_DAY_NAME = "com.example.oren.sunshine.app.DayName";
+    private final String EXTRA_TEXT = "com.example.oren.sunshine.app.Text";
+    private final String EXTRA_DATE = "com.example.oren.sunshine.app.Date";
+    private final String EXTRA_HIGH = "com.example.oren.sunshine.app.High";
+    private final String EXTRA_LOW = "com.example.oren.sunshine.app.Low";
+    private final String EXTRA_HUMIDITY = "com.example.oren.sunshine.app.Humidity";
+    private final String EXTRA_WIND = "com.example.oren.sunshine.app.Wind";
+    private final String EXTRA_PRESSURE = "com.example.oren.sunshine.app.Pressure";
+    private final String EXTRA_LABEL = "com.example.oren.sunshine.app.Label";
 
     private ArrayAdapter<String> mForecastAdapter;
 
@@ -136,25 +145,25 @@ public class ForecastFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String day = 'Dummy1';
+                String day = "Dummy1";
                 String text = mForecastAdapter.getItem(position);
-                String date = 'Dummy2';
-                String high = 'Dummy3';
-                String low = 'Dummy4';
-                String humidity = 'Dummy5';
-                String wind = 'Dummy6';
-                String pressure = 'Dummy7';
-                String label = 'Dummy8';
+                String date = "Dummy2";
+                String high = "Dummy3";
+                String low = "Dummy4";
+                String humidity = "Dummy5";
+                String wind = "Dummy6";
+                String pressure = "Dummy7";
+                String label = "Dummy8";
                 Intent intent = new Intent(getActivity(), DetailActivity.class)
-                        .putExtra(Intent.EXTRA_DAY_NAME, day)
-                        .putExtra(Intent.EXTRA_TEXT, text)
-                        .putExtra(Intent.EXTRA_DATE, date)
-                        .putExtra(Intent.EXTRA_HIGH, high)
-                        .putExtra(Intent.EXTRA_LOW, low)
-                        .putExtra(Intent.EXTRA_HUMIDITY, humidity)
-                        .putExtra(Intent.EXTRA_WIND, wind)
-                        .putExtra(Intent.EXTRA_PRESSURE, pressure)
-                        .putExtra(Intent.EXTRA_LABEL, label);
+                        .putExtra(EXTRA_DAY_NAME, day)
+                        .putExtra(EXTRA_TEXT, text)
+                        .putExtra(EXTRA_DATE, date)
+                        .putExtra(EXTRA_HIGH, high)
+                        .putExtra(EXTRA_LOW, low)
+                        .putExtra(EXTRA_HUMIDITY, humidity)
+                        .putExtra(EXTRA_WIND, wind)
+                        .putExtra(EXTRA_PRESSURE, pressure)
+                        .putExtra(EXTRA_LABEL, label);
                 startActivity(intent);
             }
         });
