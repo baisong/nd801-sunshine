@@ -50,9 +50,9 @@ import java.util.ArrayList;
 /**
  * Encapsulates fetching the forecast and displaying it as a {@link ListView} layout.
  */
-public class ForecastFragment extends Fragment {
+public class DetailFragment extends Fragment {
 
-    private final String LOG_TAG = ForecastFragment.class.getSimpleName();
+    private final String LOG_TAG = DetailFragment.class.getSimpleName();
     private final String EXTRA_DAY_NAME = "com.example.oren.sunshine.app.DayName";
     private final String EXTRA_TEXT = "com.example.oren.sunshine.app.Text";
     private final String EXTRA_DATE = "com.example.oren.sunshine.app.Date";
@@ -65,7 +65,7 @@ public class ForecastFragment extends Fragment {
 
     private ArrayAdapter<String> mForecastAdapter;
 
-    public ForecastFragment() {
+    public DetailFragment() {
     }
 
     @Override
