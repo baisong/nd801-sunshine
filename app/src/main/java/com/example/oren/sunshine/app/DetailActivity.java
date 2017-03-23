@@ -92,7 +92,15 @@ public class DetailActivity extends AppCompatActivity {
 
         private static final String LOG_TAG = DetailFragment.class.getSimpleName();
         private static final String FORECAST_SHARE_HASHTAG = "#SunshineApp";
-        private String mForecastStr;
+        private String mDayNameStr;
+        private String mTextStr;
+        private String mDateStr;
+        private String mHighStr;
+        private String mLowStr;
+        private String mHumidityStr;
+        private String mWindStr;
+        private String mPressureStr;
+        private String mLabelStr;
 
         public DetailFragment() {
             setHasOptionsMenu(true);
@@ -105,9 +113,17 @@ public class DetailActivity extends AppCompatActivity {
             View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
             Intent intent = getActivity().getIntent();
             if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
-                mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+                mDayNameStr = intent.getStringExtra(Intent.EXTRA_DAY_NAME);
+                mTextStr = intent.getStringExtra(Intent.EXTRA_TEXT);
+                mDateStr = intent.getStringExtra(Intent.EXTRA_DATE);
+                mHighStr = intent.getStringExtra(Intent.EXTRA_HIGH);
+                mLowStr = intent.getStringExtra(Intent.EXTRA_LOW);
+                mHumidityStr = intent.getStringExtra(Intent.EXTRA_HUMIDITY);
+                mWindStr = intent.getStringExtra(Intent.EXTRA_WIND);
+                mPressureStr = intent.getStringExtra(Intent.EXTRA_PRESSURE);
+                mLabelStr = intent.getStringExtra(Intent.EXTRA_LABEL);
                 TextView tDetailText = (TextView) rootView.findViewById(R.id.detail_text);
-                tDetailText.setText(concat(mForecastStr, " - EMILY SERAFY COX"));
+                tDetailText.setText(concat(mTextStr, " - YO"));
             }
 
             return rootView;
@@ -138,7 +154,7 @@ public class DetailActivity extends AppCompatActivity {
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
             shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, mForecastStr + " " + FORECAST_SHARE_HASHTAG);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, mTextStr + " " + FORECAST_SHARE_HASHTAG);
             return shareIntent;
         }
     }

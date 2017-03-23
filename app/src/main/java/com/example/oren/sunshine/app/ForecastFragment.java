@@ -136,9 +136,25 @@ public class ForecastFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String forecast = mForecastAdapter.getItem(position);
+                String day = 'Dummy1';
+                String text = mForecastAdapter.getItem(position);
+                String date = 'Dummy2';
+                String high = 'Dummy3';
+                String low = 'Dummy4';
+                String humidity = 'Dummy5';
+                String wind = 'Dummy6';
+                String pressure = 'Dummy7';
+                String label = 'Dummy8';
                 Intent intent = new Intent(getActivity(), DetailActivity.class)
-                        .putExtra(Intent.EXTRA_TEXT, forecast);
+                        .putExtra(Intent.EXTRA_DAY_NAME, day)
+                        .putExtra(Intent.EXTRA_TEXT, text)
+                        .putExtra(Intent.EXTRA_DATE, date)
+                        .putExtra(Intent.EXTRA_HIGH, high)
+                        .putExtra(Intent.EXTRA_LOW, low)
+                        .putExtra(Intent.EXTRA_HUMIDITY, humidity)
+                        .putExtra(Intent.EXTRA_WIND, wind)
+                        .putExtra(Intent.EXTRA_PRESSURE, pressure)
+                        .putExtra(Intent.EXTRA_LABEL, label);
                 startActivity(intent);
             }
         });
